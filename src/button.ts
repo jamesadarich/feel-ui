@@ -1,18 +1,21 @@
-import {bootstrap, Component} from 'angular2/angular2';
+import {bootstrap, Component, NgClass} from "angular2/angular2";
 @Component({
-    selector: 'my-app',
-    template: '<button type="button" (click)=onClick()>Something else{{model[modelProperyName]}}</button>'
+    directives: [NgClass],
+    selector: "my-app",
+    template: "<button type='button' [ng-class]=\"{ 'btn-flat': isFlat }\" (click)=onClick()>{{text}}</button>"
 })
 class AppComponent {
-  model = {
-    test: 'it worked',
-    test2: 'something else'
-  }
 
-  modelProperyName = 'test2'
+   isFlat: boolean;
+
+   constructor() {
+      this.isFlat = true;
+   }
+
+  text = "test2s";
 
   onClick() {
-    console.log('clicked');
+    console.log("clicked");
   }
  }
 bootstrap(AppComponent);
