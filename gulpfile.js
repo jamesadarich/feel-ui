@@ -5,7 +5,7 @@ var sass = require('gulp-sass');
 var gls = require('gulp-live-server');
 var ts = require('gulp-typescript');
 
-gulp.task('dev-server', function() {
+gulp.task('dev-site', function() {
    //1. serve with default settings
    //var server = gls.static(); //equals to gls.static('public', 3000);
    //server.start();

@@ -1,10 +1,10 @@
 import {bootstrap, Component, NgClass} from "angular2/angular2";
 @Component({
     directives: [NgClass],
-    selector: "my-app",
+    selector: "feel-button",
     template: "<button type='button' [ng-class]=\"{ 'btn-flat': isFlat }\" (click)=onClick()>{{text}}</button>"
 })
-class AppComponent {
+export class ButtonComponent {
 
    isFlat: boolean;
 
@@ -12,10 +12,10 @@ class AppComponent {
       this.isFlat = true;
    }
 
-  text = "test2s";
+  text: string = "test2s";
 
   onClick() {
     console.log("clicked");
   }
  }
-bootstrap(AppComponent);
+bootstrap(ButtonComponent);

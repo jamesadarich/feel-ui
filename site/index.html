@@ -1,16 +1,18 @@
 <html>
   <head>
     <title>Angular 2 QuickStart</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="https://code.angularjs.org/tools/system.js"></script>
     <script src="https://code.angularjs.org/tools/typescript.js"></script>
+    <script src="../node_modules/es6-shim/es6-shim.js"></script>
     <script src="https://code.angularjs.org/2.0.0-alpha.44/angular2.dev.js"></script>
     <script>
       System.config({
         transpiler: 'typescript',
         typescriptOptions: { emitDecoratorMetadata: true }
       });
-      System.import('./src/button.ts');
+      System.import('./ts/button-page.ts');
     </script>
   </head>
   <body>
