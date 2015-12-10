@@ -4,9 +4,13 @@ import { ButtonComponent } from "../src/button.ts";
     directives: [ ButtonComponent ],
     selector: "my-app",
     template: `<h1>Buttons</h1>
-               <feel-button></feel-button>
-               <feel-button></feel-button>`
+               <feel-button [flat]="false" [text]="'raised'"></feel-button>
+               <feel-button [flat]="true" [text]="'flat'" (click)=onClick()></feel-button>`
 })
 class ButtonPage {
+
+onClick() {
+  console.log("clicked");
+}
 }
 bootstrap(ButtonPage);
