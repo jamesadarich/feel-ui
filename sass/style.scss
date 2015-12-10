@@ -3,6 +3,33 @@ body {
    font-family: "Open sans";
 }
 
+feel-menu-bar {
+  background-color: red;
+  color: white;
+  display: block;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+
+  .title {
+    display: inline;
+  }
+}
+
+feel-menu-panel {
+  background-color: white;
+
+  .title {
+    background-color: red;
+  }
+
+  .menu-item {
+    color: black;
+    border: 1px solid #eee;
+  }
+}
+
 button {
    background-color: white;
    border: none;

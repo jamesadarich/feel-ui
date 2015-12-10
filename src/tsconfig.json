@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "amd",
+        "declaration": true,
+        "noImplicitAny": true,
+        "sourceMap": true,
+        "preserveConstEnums": true,
+        "outFile": "../js/feel.js"
+    },
+    "buildOnSave": true,
+    "compileOnSave": true,
+    "exclude": [
+      "**/*.d.ts"
+    ],
+    "files": [
+        "./feel.ts"
+    ],
+    "atom": {
+        "rewriteTsconfig": true
+    }
+}

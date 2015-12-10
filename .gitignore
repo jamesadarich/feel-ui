@@ -8,3 +8,6 @@ css
 #site
 site/src
 site/css
+
+#compiled-typescript
+js

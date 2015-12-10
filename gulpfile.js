@@ -45,7 +45,7 @@ gulp.task('sass:watch', function () {
 gulp.task(
    'dev',
    ['sass:watch',
-   'dev-server'],
+   'dev-site'],
    function () {
 
    });
