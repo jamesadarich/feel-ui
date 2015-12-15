@@ -5,8 +5,10 @@ import { MenuPanel } from "./menu-panel.ts";
     directives: [ ButtonComponent, MenuPanel ],
     selector: "feel-menu-bar",
     template: `<feel-button [text]="'M'" (click)=toggleMenuPanel()></feel-button>
-               <h1 class="title">{{title}}</h1>
-               <feel-menu-panel [isOpen]="isMenuOpen"></feel-menu-panel>`
+               <div class="title">
+                <h1>{{title}}</h1>
+                </div>
+               <feel-menu-panel [open]="isMenuOpen"></feel-menu-panel>`
 })
 export class MenuBar {
 
@@ -18,7 +20,6 @@ export class MenuBar {
    }
 
    public toggleMenuPanel():void {
-     console.log(this);
      this.isMenuOpen = !this.isMenuOpen
    }
  }

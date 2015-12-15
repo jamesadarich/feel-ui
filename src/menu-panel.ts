@@ -1,10 +1,12 @@
 import { Component, NgClass, Input} from "angular2/angular2";
+import { ButtonComponent } from "../src/feel.ts";
 @Component({
-    directives: [NgClass],
+    directives: [NgClass, ButtonComponent],
     selector: "feel-menu-panel",
-    template: `<div [ng-class]=\"{ 'show': isOpen }\" >
-                  <div class="title">
+    template: `<div [ng-class]=\"{ 'show': open }\" >
+                  <div class="menu-title">
                     <h1>Menu</h1>
+                    <feel-button [text]="'X'" (click)=closeMenuPanel()></feel-button>
                   </div>
                   <div class="menu-options">
                     <div class="menu-item">One</div>
@@ -15,8 +17,12 @@ import { Component, NgClass, Input} from "angular2/angular2";
 })
 export class MenuPanel {
 
-   @Input() isOpen: boolean;
+   @Input() open: boolean;
 
    constructor() {
+   }
+
+   public closeMenuPanel() {
+     this.open = false;
    }
  }
