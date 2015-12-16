@@ -1,4 +1,4 @@
-import { Component, Input} from "angular2/angular2";
+import { Component, Input } from "angular2/angular2";
 import { ButtonComponent } from "./button.ts";
 import { MenuPanel } from "./menu-panel.ts";
 @Component({
@@ -8,7 +8,7 @@ import { MenuPanel } from "./menu-panel.ts";
                <div class="title">
                 <h1>{{title}}</h1>
                 </div>
-               <feel-menu-panel [open]="isMenuOpen"></feel-menu-panel>`
+               <feel-menu-panel [open]="isMenuOpen" (close)="onMenuClose()"></feel-menu-panel>`
 })
 export class MenuBar {
 
@@ -21,5 +21,9 @@ export class MenuBar {
 
    public toggleMenuPanel():void {
      this.isMenuOpen = !this.isMenuOpen
+   }
+
+   public onMenuClose(): void {
+      this.isMenuOpen = false;
    }
  }
