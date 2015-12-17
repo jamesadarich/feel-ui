@@ -1,14 +1,22 @@
-import { bootstrap, Component, NgClass } from "angular2/angular2";
-import { ButtonPage } from "./button-page.ts";
-import { MenuBar } from "../src/menu-bar.ts";
+import { Component, provide } from "angular2/core";
+import {bootstrap}    from "angular2/platform/browser"
+//import { RouteConfig,  RouterOutlet } from "angular2/router";
+import {ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from 'angular2/router';
+import {ROUTER_DIRECTIVES, RouteConfig, Router, Location, Route} from 'angular2/router';
+import { ButtonPage } from "./button-page";
+import { InputPage } from "./input-page";
+import { MenuBar } from "../src/menu-bar";
 @Component({
-    directives: [ ButtonPage, MenuBar ],
+    directives: [ ButtonPage, MenuBar, ROUTER_DIRECTIVES/*, RouterOutlet*/ ],
     selector: "my-app",
     template: `<feel-menu-bar [title]="'Feel'"></feel-menu-bar>
-               <div id="site-body">
-                  <button-page></button-page>
-               </div>`
+               <router-outlet></router-outlet>`
 })
+@RouteConfig([
+    {path: "/",        component: ButtonPage, as: "Buttons"},
+    {path: "/buttons",        component: ButtonPage, as: "Buttons"},
+    {path: "/input", component: InputPage, as: "Input"  }
+])
 class SiteContainer {
 }
-bootstrap(SiteContainer);
+bootstrap(SiteContainer, [ROUTER_PROVIDERS, provide(LocationStrategy, {useClass: HashLocationStrategy})]);

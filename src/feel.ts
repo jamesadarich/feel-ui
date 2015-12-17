@@ -1,3 +1,3 @@
-export { ButtonComponent } from "./button.ts";
-export { MenuBar } from "./menu-bar.ts";
-export { MenuPanel } from "./menu-panel.ts";
+export { ButtonComponent } from "./button";
+export { MenuBar } from "./menu-bar";
+export { MenuPanel } from "./menu-panel";

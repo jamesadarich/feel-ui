@@ -13,10 +13,9 @@
       "**/*.d.ts"
     ],
     "files": [
-        "./button.ts",
-        "./feel.ts",
-        "./menu-bar.ts",
-        "./menu-panel.ts"
+        "./button-page.ts",
+        "./input-page.ts",
+        "./site-container.ts"
     ],
     "atom": {
         "rewriteTsconfig": true

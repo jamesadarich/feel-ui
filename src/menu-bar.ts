@@ -1,6 +1,6 @@
-import { Component, Input } from "angular2/angular2";
-import { ButtonComponent } from "./button.ts";
-import { MenuPanel } from "./menu-panel.ts";
+import { Component, Input } from "angular2/core";
+import { ButtonComponent } from "./button";
+import { MenuPanel } from "./menu-panel";
 @Component({
     directives: [ ButtonComponent, MenuPanel ],
     selector: "feel-menu-bar",

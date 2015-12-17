@@ -1,5 +1,5 @@
-import { Component, NgClass } from "angular2/angular2";
-import { ButtonComponent } from "../src/feel.ts";
+import { Component } from "angular2/core";
+import { ButtonComponent } from "../src/feel";
 @Component({
     directives: [ ButtonComponent ],
     selector: "button-page",

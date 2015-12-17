@@ -10,4 +10,9 @@ site/src
 site/css
 
 #compiled-typescript
-js
+site/ts/**/*.js
+site/ts/**/*.js.map
+site/ts/**/*.d.ts
+src/**/*.js
+src/**/*.js.map
+src/**/*.d.ts

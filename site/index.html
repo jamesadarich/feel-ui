@@ -3,16 +3,27 @@
     <title>Angular 2 QuickStart</title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script src="https://code.angularjs.org/tools/system.js"></script>
-    <script src="https://code.angularjs.org/tools/typescript.js"></script>
-    <script src="../node_modules/es6-shim/es6-shim.js"></script>
-    <script src="https://code.angularjs.org/2.0.0-alpha.44/angular2.dev.js"></script>
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script src="node_modules/angular2/bundles/router.js"></script>
     <script>
       System.config({
-        transpiler: 'typescript',
-        typescriptOptions: { emitDecoratorMetadata: true }
+        packages: {
+          ts: {
+            format: 'register',
+            defaultExtension: 'js'
+         },
+
+           src: {
+             format: 'register',
+             defaultExtension: 'js'
+           }
+        }
       });
-      System.import('./ts/site-container.ts');
+      System.import('ts/site-container')
+            .then(null, console.error.bind(console));
     </script>
   </head>
   <body>
