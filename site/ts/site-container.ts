@@ -7,15 +7,15 @@ import { ButtonPage } from "./button-page";
 import { InputPage } from "./input-page";
 import { MenuBar } from "../src/menu-bar";
 @Component({
-    directives: [ ButtonPage, MenuBar, ROUTER_DIRECTIVES/*, RouterOutlet*/ ],
+    directives: [ ButtonPage, MenuBar, ROUTER_DIRECTIVES ],
     selector: "my-app",
     template: `<feel-menu-bar [title]="'Feel'"></feel-menu-bar>
                <router-outlet></router-outlet>`
 })
 @RouteConfig([
-    {path: "/",        component: ButtonPage, as: "Buttons"},
-    {path: "/buttons",        component: ButtonPage, as: "Buttons"},
-    {path: "/input", component: InputPage, as: "Input"  }
+    {path: "/",        component: ButtonPage, name: "Home"},
+    {path: "/buttons",        component: ButtonPage, name: "Buttons"},
+    {path: "/input", component: InputPage, name: "Input"  }
 ])
 class SiteContainer {
 }
