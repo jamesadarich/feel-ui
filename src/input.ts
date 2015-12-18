@@ -1,10 +1,10 @@
 import { Component, Input} from "angular2/core";
-import { NgClass, NgModel } from "angular2/common";
+import { NgClass } from "angular2/common";
 @Component({
     directives: [NgClass],
     selector: "feel-input",
     template: `<label>{{label}}</label>
-               <input type="text" [ngModel]="value" />`
+               <input type="text" value="{{value}}" (input)="onInput($event)" />`
 })
 export class InputComponent {
 
@@ -13,5 +13,9 @@ export class InputComponent {
 
    constructor() {
       window.mango = this;
+   }
+
+   public onInput(event: Event) {
+      this.value = event.target.value;
    }
  }
