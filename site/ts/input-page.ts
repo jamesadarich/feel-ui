@@ -1,13 +1,15 @@
 import { Component } from "angular2/core";
-import { ButtonComponent } from "../src/feel";
+import { InputComponent } from "../src/input";
 @Component({
-    directives: [ ButtonComponent ],
-    selector: "button-page",
-    template: `<h1>Buttons</h1>
-               <feel-button [flat]="false" [text]="'something'"></feel-button>
-               <feel-button [flat]="true" [text]="'different'" (click)=onClick()></feel-button>`
+    directives: [ InputComponent ],
+    selector: "input-page",
+    template: `<h1>Input</h1>
+               <feel-input [label]="'value 1'" [value]="something"></feel-input>
+               <feel-input [label]="'value 2'" [value]="something"></feel-input>`
 })
 export class InputPage {
+
+  public something: string = 'this';
 
    onClick() {
      console.log("clicked");
