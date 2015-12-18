@@ -28,7 +28,6 @@
   },
   "devDependencies": {
     "gulp": "^3.9.0",
-    "gulp-live-server": "0.0.29",
     "gulp-sass": "^2.1.0",
     "live-server": "^0.8.2",
     "node-sass": "^3.4.2",

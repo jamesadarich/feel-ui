@@ -11,7 +11,7 @@ export class InputPage {
 
   public something: string = 'this';
 
-   onClick() {
-     console.log("clicked");
+   public constructor() {
+      window.banana = this;
    }
 }

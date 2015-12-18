@@ -2,26 +2,23 @@
 
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var gls = require('gulp-live-server');
 var ts = require('gulp-typescript');
+var liveServer = require("live-server");
 
 gulp.task('dev-site', function() {
-   //1. serve with default settings
-   //var server = gls.static(); //equals to gls.static('public', 3000);
-   //server.start();
 
-   //2. serve at custom port
-   var server = gls.static('site', 3000);
-   server.start();
-
-   //3. serve multi folders
-   //var server = gls.static(['dist', '.tmp']);
-   //server.start();
-
-   //use gulp.watch to trigger server actions(notify, start or stop)
-   gulp.watch(['./site/**/*.*'], function (file) {
-      server.notify.apply(server, [file]);
-   });
+   //serve with live changes
+   var params = {
+    port: 3000, // Set the server port. Defaults to 8080.
+    host: "localhost", // Set the address to bind to. Defaults to 0.0.0.0.
+    root: "site", // Set root directory that's being server. Defaults to cwd.
+    open: true, // When false, it won't load your browser by default.
+    //ignore: 'scss,my/templates', // comma-separated string for paths to ignore
+    file: "index.html", // When set, serve this file for every 404 (useful for single-page applications)
+    wait: 1000 // Waits for all changes, before reloading. Defaults to 0 sec.
+    //mount: [['/components', './node_modules']] // Mount a directory to a route.
+};
+liveServer.start(params);
 
    gulp.watch(['./css/**/*.*'], function (file) {
       gulp.src(['./css/**/*.*']).pipe(gulp.dest('./site/css'));
