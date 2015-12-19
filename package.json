@@ -1,6 +1,6 @@
 {
   "name": "feel-ui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "https://github.com/jamesrichford/feel-ui.git"
   },
-  "author": "",
+  "author": "James Richford",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jamesrichford/feel-ui/issues"
