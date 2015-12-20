@@ -39,6 +39,15 @@ gulp.task('sass:watch', function () {
    gulp.watch('./sass/**/*.scss', ['sass']);
 });
 
+gulp.task('dist-typescript', function () {
+  var tsResult = gulp.src('./src/**/*.ts')
+       .pipe(ts({
+        noImplicitAny: true,
+        module: 'umd'
+      }));
+ return tsResult.js.pipe(gulp.dest('./dist'));
+});
+
 gulp.task(
    'dev',
    ['sass:watch',

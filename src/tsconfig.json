@@ -1,11 +1,12 @@
 {
     "compilerOptions": {
         "target": "es5",
-        "module": "system",
+        "module": "umd",
         "declaration": true,
         "noImplicitAny": true,
         "sourceMap": true,
-        "preserveConstEnums": true
+        "preserveConstEnums": true,
+        "outFile": "feel-ui.umd.js"
     },
     "buildOnSave": true,
     "compileOnSave": true,

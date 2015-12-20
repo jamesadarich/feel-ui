@@ -10,8 +10,4 @@ export class InputComponent {
 
    @Input() label: string;
    @Input() value: string;
-
-   constructor() {
-      window.mango = this;
-   }
  }
