@@ -1,6 +1,6 @@
 import { Component, Input, EventEmitter } from "angular2/core";
 import { NgClass } from "angular2/common";
-import { ButtonComponent } from "../src/feel";
+import { ButtonComponent } from "./button";
 import { RouterLink } from 'angular2/router';
 @Component({
     directives: [NgClass, ButtonComponent, RouterLink ],
