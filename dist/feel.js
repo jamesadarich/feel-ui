@@ -1,17 +1,27 @@
-(function (factory) {
-    if (typeof module === 'object' && typeof module.exports === 'object') {
-        var v = factory(require, exports); if (v !== undefined) module.exports = v;
+System.register(["./button", "./menu-bar", "./menu-panel", "./input"], function(exports_1) {
+    return {
+        setters:[
+            function (button_1_1) {
+                exports_1({
+                    "ButtonComponent": button_1_1["ButtonComponent"]
+                });
+            },
+            function (menu_bar_1_1) {
+                exports_1({
+                    "MenuBar": menu_bar_1_1["MenuBar"]
+                });
+            },
+            function (menu_panel_1_1) {
+                exports_1({
+                    "MenuPanel": menu_panel_1_1["MenuPanel"]
+                });
+            },
+            function (input_1_1) {
+                exports_1({
+                    "InputComponent": input_1_1["InputComponent"]
+                });
+            }],
+        execute: function() {
+        }
     }
-    else if (typeof define === 'function' && define.amd) {
-        define(["require", "exports", "./button", "./menu-bar", "./menu-panel", "./input"], factory);
-    }
-})(function (require, exports) {
-    var button_1 = require("./button");
-    exports.ButtonComponent = button_1.ButtonComponent;
-    var menu_bar_1 = require("./menu-bar");
-    exports.MenuBar = menu_bar_1.MenuBar;
-    var menu_panel_1 = require("./menu-panel");
-    exports.MenuPanel = menu_panel_1.MenuPanel;
-    var input_1 = require("./input");
-    exports.InputComponent = input_1.InputComponent;
 });

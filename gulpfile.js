@@ -42,8 +42,14 @@ gulp.task('sass:watch', function () {
 gulp.task('dist-typescript', function () {
   var tsResult = gulp.src('./src/**/*.ts')
        .pipe(ts({
+         target: 'es5',
         noImplicitAny: true,
-        module: 'umd'
+        module: 'system',
+        experimentalDecorators: true,
+        "declaration": true,
+        "noImplicitAny": true,
+        "sourceMap": true,
+        "preserveConstEnums": true
       }));
  return tsResult.js.pipe(gulp.dest('./dist'));
 });
