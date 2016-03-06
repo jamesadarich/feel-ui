@@ -8,7 +8,8 @@ module.exports = function(config) {
          'karma-jasmine',
          'karma-coverage',
          'karma-phantomjs-launcher',
-         'karma-chrome-launcher'
+         'karma-chrome-launcher',//,
+         'karma-systemjs'
       ],
 
       // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -17,15 +18,75 @@ module.exports = function(config) {
 
       // frameworks to use
       // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-      frameworks: ['jasmine'],
+      frameworks: ['systemjs',
+      'jasmine'],
+
+      systemjs: {
+        	// Path to your SystemJS configuration file
+        	//configFile: 'app/system.conf.js',
+
+        	// Patterns for files that you want Karma to make available, but not loaded until a module requests them. eg. Third-party libraries.
+        	serveFiles: [
+        		'node_modules/**/*.js',
+            'src/**/*.js'
+        	],
+
+        	// SystemJS configuration specifically for tests, added after your config file.
+        	// Good for adding test libraries and mock modules
+        	config: {
+            baseUrl: '/base',
+            "defaultJSExtensions": true,
+            transpiler: 'typescsript',
+            map: {
+            // Added a path for ng2 because internal they require modules as 'angular2/src/...'
+            angular2: 'node_modules/angular2',
+            rxjs: 'node_modules/rxjs'
+          }/*,
+
+          paths: {
+            'es6-promise': 'node_modules/es6-promise/dist/es6-promise.js'
+          },
+          meta: {
+            'angular2/angular2':{
+                format: 'register'
+            },
+            'angular2/core':{
+                format: 'register'
+            },
+
+              'angular2/router':{
+                  format: 'register'
+              },
+
+                'angular2/common':{
+                    format: 'register'
+                }
+          }*/
+          /*
+        		paths: {
+        			'systemjs': 'node_modules/systemjs/dist/system.js',
+              'polyfils': 'node_modules/angular2/bundles/angular2-polyfills.js',
+              'es6-shim': 'node_modules/es6-shim/es6-shim.js'
+
+        		}*/
+        	}
+        },
 
 
       // list of files / patterns to load in the browser
       files: [
-         'test/js/test/**/*.js',
-         'js/nine-tails.js'
+        'node_modules/angular2/bundles/angular2-polyfills.js',
+         'node_modules/es6-shim/es6-shim.js',
+      'node_modules/systemjs/dist/system.js',
+      //  'node_modules/es6-module-loader/dist/es6-module-loader.js',
+      //  'node_modules/es6-promise/dist/es6-promise.js',
+      //  'node_modules/rxjs/bundles/Rx.umd.js',
+      //  'node_modules/angular2/bundles/angular2-all.umd.dev.js',
+      //  'src/**/*.js',
+         'test/menu-panel.spec.js'
+      //   'test/menu-panel.spec.js.map',
+      //  'test/menu-panel.spec.ts'
       ],
-
 
       // list of files to exclude
       exclude: [
@@ -35,7 +96,7 @@ module.exports = function(config) {
       // preprocess matching files before serving them to the browser
       // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
       preprocessors: {
-        'js/nine-tails.js': 'coverage'
+        'src/**/*.js': 'coverage'
       },
 
 
@@ -71,11 +132,11 @@ module.exports = function(config) {
 
       // start these browsers
       // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-      browsers: [/*'Chrome'*/'PhantomJS'/*, 'Chrome'/*, 'IE'*/],
+      browsers: ['Chrome'/*'PhantomJS'/*, 'Chrome'/*, 'IE'*/],
 
 
       // Continuous Integration mode
       // if true, Karma captures browsers, runs the tests and exits
-      singleRun: true
+      singleRun: false
    })
 }

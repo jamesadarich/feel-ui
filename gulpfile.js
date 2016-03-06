@@ -4,6 +4,12 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var ts = require('gulp-typescript');
 var liveServer = require("live-server");
+var karma = require('karma');
+var browserify = require('browserify');
+var source      = require("vinyl-source-stream");
+var express = require('express');
+var serveStatic = require('serve-static');
+var tsify = require("tsify");
 
 gulp.task('dev-site', function() {
 
@@ -62,14 +68,92 @@ gulp.task(
 
    });
 
-   gulp.task('build', function (done) {
+gulp.task("integration-test", function () {
 
-      // var tsResult = gulp.src('./src/**/*.ts')
-      //      .pipe(ts({
-      //       noImplicitAny: true,
-      //       module: 'amd',
-      //       outFile: 'nine-tails.js'
-      //     }));
-      //return tsResult.js.pipe(gulp.dest('./js'));
-      //return tsResult.js.pipe(gulp.dest('./js/nine-tails.js'));
+});
+
+gulp.task("start-end-to-end-server", ["bundle"], function () {
+  var app = express();
+  app.use(serveStatic(__dirname + "/test/end-to-end-tests/harness", {'index': ['index.html']}));
+  /*
+  app.use(serveStatic(__dirname + "/dist"));
+  app.use(serveStatic(__dirname + "/node_modules"));
+  */
+  app.use(serveStatic(__dirname));
+  app.listen(4000);
+});
+
+gulp.task("bundle", ["bundle-sass", "bundle-typescript"], function () {});
+
+gulp.task('bundle-sass', function () {
+   gulp.src('./sass/feel-ui.scss')
+   .pipe(sass().on('error', sass.logError))
+   .pipe(gulp.dest('./dist'));
+});
+
+gulp.task("bundle-typescript", ["build"], function () {
+  var b = browserify({
+    standalone : 'FeelUi',
+    entries: "./feel-ui.ts",
+    debug: true
+  });
+  b.plugin(tsify, {
+
+        "target": "es5",
+        "module": "umd",
+        "declaration": true,
+        "noImplicitAny": true,
+        "sourceMap": true,
+        "preserveConstEnums": true,
+        "moduleResolution": "node",
+        experimentalDecorators: true
+  });
+
+  b.ignore("angular2/core");
+  b.ignore("angular2/common");
+  b.ignore("angular2/router");
+
+  return b.bundle()
+    .pipe(source("feel-ui.js"))
+    //.pipe(buffer())
+    .pipe(gulp.dest("./dist/"));
+});
+
+
+gulp.task('build', function (done) {
+
+    var tsResult = gulp.src('./src/**/*.ts')
+      .pipe(ts({
+          target: "es5",
+          noImplicitAny: true,
+          module: 'umd',
+          sourceMap: true,
+          experimentalDecorators: true,
+          "moduleResolution" : "node"
+        }));
+    return tsResult.js.pipe(gulp.dest('./src'));
+    //return tsResult.js.pipe(gulp.dest('./js/nine-tails.js'));
+});
+
+
+
+   gulp.task('build-test', function (done) {
+     var tsResult = gulp.src('./test/**/*.ts')
+       .pipe(ts({
+           target: "es5",
+           noImplicitAny: true,
+           sourceMap: true,
+           module: 'umd',
+           experimentalDecorators: true,
+           "moduleResolution" : "node"
+         }));
+       return tsResult.js.pipe(gulp.dest('./test'));
+   });
+
+   gulp.task('test', ['build', 'build-test'], function (done) {
+       new karma.Server({
+         configFile: __dirname + '/karma.conf.js',
+         //singleRun: false,
+         //browsers: [ "Chrome" ]
+       }, done).start();
    });

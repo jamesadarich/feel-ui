@@ -96,3 +96,27 @@ button {
       }
    }
 }
+
+#notification-stream {
+    position: fixed;
+    top: 100px;
+    right: 50%;
+    text-align: center;
+    .notification {
+      padding: 8px;
+      margin: 8px;
+      display: block;
+
+      &.success {
+          border: 1px solid hsl(113, 80%, 35%);
+          color: hsl(113, 80%, 35%);
+          background-color: hsl(113, 60%, 80%);
+      }
+
+      &.error {
+          border: 1px solid hsl(0, 80%, 35%);
+          color: hsl(0, 80%, 35%);
+          background-color: hsl(0, 60%, 80%);
+      }
+    }
+}

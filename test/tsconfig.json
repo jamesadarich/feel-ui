@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "umd",
+        "noImplicitAny": true,
+        "sourceMap": true,
+        "preserveConstEnums": true
+    },
+    "buildOnSave": true,
+    "compileOnSave": true,
+    "exclude": [
+      "**/*.d.ts"
+    ],
+    "files": [
+        "./menu-panel.spec.ts"
+    ],
+    "atom": {
+        "rewriteTsconfig": true
+    }
+}
