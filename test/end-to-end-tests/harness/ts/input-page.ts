@@ -11,7 +11,6 @@ import { FORM_DIRECTIVES, NgModel } from "angular2/common";
 export class InputPage {
 
   public constructor() {
-    window.mango = this;
   }
 
   public something: string = 'this';
