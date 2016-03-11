@@ -5,6 +5,7 @@ import {ROUTER_PROVIDERS, LocationStrategy, PathLocationStrategy } from 'angular
 import {ROUTER_DIRECTIVES, RouteConfig, Router, Location, Route} from 'angular2/router';
 import { ButtonPage } from "./button-page";
 import { InputPage } from "./input-page";
+import { TablePage } from "./table-page";
 import { NotificationsPage } from "./notifications-page";
 import { MenuBar } from "feel-ui/feel-ui";
 /*import * as FeelUi from "feel-ui/feel-ui";
@@ -19,7 +20,8 @@ console.log("FeelUi", FeelUi);*/
     {path: "/",        component: ButtonPage, name: "Home"},
     {path: "/buttons",        component: ButtonPage, name: "Buttons"},
     {path: "/input", component: InputPage, name: "Input"  },
-    {path: "/notifications", component: NotificationsPage, name: "Notifications"  }
+    {path: "/notifications", component: NotificationsPage, name: "Notifications"  },
+    {path: "/table", component: TablePage, name: "Table"  }
 ])
 class SiteContainer {
 }

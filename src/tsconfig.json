@@ -26,7 +26,9 @@
         "./menu-bar.ts",
         "./menu-panel.d.ts",
         "./menu-panel.ts",
-        "./notification-provider.ts"
+        "./notification-provider.d.ts",
+        "./notification-provider.ts",
+        "./table.ts"
     ],
     "atom": {
         "rewriteTsconfig": true
