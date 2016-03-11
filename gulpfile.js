@@ -53,7 +53,6 @@ gulp.task('dist-typescript', function () {
         module: 'system',
         experimentalDecorators: true,
         "declaration": true,
-        "noImplicitAny": true,
         "sourceMap": true,
         "preserveConstEnums": true
       }));

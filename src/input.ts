@@ -4,14 +4,15 @@ import { NgClass, NgModel } from "angular2/common";
     directives: [NgClass],
     selector: "feel-input",
     template: `<label>{{label}}</label>
-               <input type="text" (input)=onInput($event) [(ngModel)]="value" />`
+               <input type="text" [ngModel]=value (ngModelChange)="onInput($event)" />`
 })
 export class InputComponent {
 
    @Input() label: string;
    @Input() value: string;
-   @Output() custominput = new EventEmitter();
-   onInput() {
-     this.custominput.emit(this.value);
+   @Output() valueChange = new EventEmitter();
+   onInput(event: string) {
+      this.value = event;
+      this.valueChange.emit(event);
    }
  }

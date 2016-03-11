@@ -5,7 +5,7 @@ console.log("InputComponent", InputComponent)
     directives: [ ButtonComponent, InputComponent ],
     selector: "notifications-page",
     template: `<h1>Notifications</h1>
-               <feel-input [label]="'Title'" (custominput)=onTitleInput($event) [(value)]="title"></feel-input>
+               <feel-input [label]="'Title'" [(value)]="title"></feel-input>
                <input  [(ngModel)]="message"/>
                <feel-button [flat]="false" [text]="'Success'" (click)=onSuccessClick()></feel-button>
                <feel-button [flat]="false" [text]="'Error'" (click)=onErrorClick()></feel-button>`

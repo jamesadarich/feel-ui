@@ -19,7 +19,6 @@
     "files": [
         "./button.d.ts",
         "./button.ts",
-        "./feel-ui.d.ts",
         "./feel.d.ts",
         "./input.d.ts",
         "./input.ts",
@@ -27,7 +26,6 @@
         "./menu-bar.ts",
         "./menu-panel.d.ts",
         "./menu-panel.ts",
-        "./notification-provider.d.ts",
         "./notification-provider.ts"
     ],
     "atom": {

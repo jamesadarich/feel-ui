@@ -5,7 +5,7 @@ import { FORM_DIRECTIVES, NgModel } from "angular2/common";
     directives: [ InputComponent, NgModel ],
     selector: "input-page",
     template: `<h1>Input</h1>
-               <input  [(ngModel)]="something"/>
+               <feel-input [(value)]="something"></feel-input>
                <p>Value: {{something}}</p>`
 })
 export class InputPage {

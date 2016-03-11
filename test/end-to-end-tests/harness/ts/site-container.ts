@@ -4,7 +4,7 @@ import {bootstrap}    from "angular2/platform/browser"
 import {ROUTER_PROVIDERS, LocationStrategy, PathLocationStrategy } from 'angular2/router';
 import {ROUTER_DIRECTIVES, RouteConfig, Router, Location, Route} from 'angular2/router';
 import { ButtonPage } from "./button-page";
-//import { InputPage } from "./input-page";
+import { InputPage } from "./input-page";
 import { NotificationsPage } from "./notifications-page";
 import { MenuBar } from "feel-ui/feel-ui";
 /*import * as FeelUi from "feel-ui/feel-ui";
@@ -18,8 +18,7 @@ console.log("FeelUi", FeelUi);*/
 @RouteConfig([
     {path: "/",        component: ButtonPage, name: "Home"},
     {path: "/buttons",        component: ButtonPage, name: "Buttons"},
-    {path: "/input", component: ButtonPage, name: "Input"  },
-//    {path: "/input", component: InputPage, name: "Input"  },
+    {path: "/input", component: InputPage, name: "Input"  },
     {path: "/notifications", component: NotificationsPage, name: "Notifications"  }
 ])
 class SiteContainer {
