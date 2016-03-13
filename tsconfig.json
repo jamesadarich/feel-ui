@@ -11,24 +11,21 @@
     "buildOnSave": true,
     "compileOnSave": true,
     "exclude": [
-        "**/*.d.ts"
+        "./**/*.d.ts"
     ],
     "filesGlob": [
-        "./**/*.ts"
+        "./feel-ui.ts",
+        "./src/**/*.ts"
     ],
     "files": [
-        "./button.d.ts",
-        "./button.ts",
-        "./feel.d.ts",
-        "./input.d.ts",
-        "./input.ts",
-        "./menu-bar.d.ts",
-        "./menu-bar.ts",
-        "./menu-panel.d.ts",
-        "./menu-panel.ts",
-        "./notification-provider.d.ts",
-        "./notification-provider.ts",
-        "./table.ts"
+        "./feel-ui.ts",
+        "./src/button.ts",
+        "./src/input.ts",
+        "./src/menu-bar.ts",
+        "./src/menu-panel.ts",
+        "./src/notification-provider.ts",
+        "./src/pipes/sort-pipe.ts",
+        "./src/table.ts"
     ],
     "atom": {
         "rewriteTsconfig": true

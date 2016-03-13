@@ -11,6 +11,8 @@ site/css
 
 #compiled-typescript
 feel-ui.js
+feel-ui.d.ts
+feel-ui.js.map
 site/ts/**/*.js
 site/ts/**/*.js.map
 site/ts/**/*.d.ts

@@ -1,3 +1,5 @@
+//Temporary work around for Angular2#4902
+///<reference path="node_modules/angular2/typings/browser.d.ts"/>
 
 import { ButtonComponent } from "./src/button";
 import { MenuBar } from "./src/menu-bar";

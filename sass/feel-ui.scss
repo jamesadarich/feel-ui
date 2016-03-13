@@ -120,3 +120,62 @@ button {
       }
     }
 }
+
+.sort-icon {
+  &.ascending::after {
+    content: "▲";
+  }
+
+  &.descending::after {
+    content: "▼";
+  }
+}
+
+feel-table {
+  table {
+    border-collapse: collapse;
+
+    thead {
+      background-color: red;
+      color: white;
+
+      th {
+        padding: 4px 6px;
+      }
+    }
+
+    tbody {
+      tr {
+        &:nth-child(even) {
+          background-color: #eee;
+        }
+
+        td {
+          padding: 4px 6px;
+        }
+      }
+    }
+  }
+}
+
+feel-input {
+  display: inline-block;
+
+  label {
+    display: block;
+    padding: 4px 6px;
+  }
+
+  input {
+    border: 0;
+    background-color: #eee;
+    border-bottom: 2px solid #ccc;
+    padding: 4px 6px;
+    font-size: 18px;
+    outline: none;
+
+    &:focus, :active {
+      border-bottom-color: red;
+    }
+  }
+}

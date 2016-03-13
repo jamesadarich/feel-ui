@@ -10,6 +10,7 @@ var source      = require("vinyl-source-stream");
 var express = require('express');
 var serveStatic = require('serve-static');
 var tsify = require("tsify");
+var fs = require("fs");
 
 gulp.task('dev-site', function() {
 
@@ -79,6 +80,10 @@ gulp.task("start-end-to-end-server", ["bundle"], function () {
   app.use(serveStatic(__dirname + "/node_modules"));
   */
   app.use(serveStatic(__dirname));
+
+  app.use(function(req, res) {
+    res.sendFile(__dirname + "/test/end-to-end-tests/harness/index.html");
+  });
   app.listen(4000);
 });
 
@@ -121,7 +126,18 @@ gulp.task("bundle-typescript", ["build"], function () {
 
 gulp.task('build', function (done) {
 
-    var tsResult = gulp.src('./src/**/*.ts')
+    var tsResult = gulp.src([ "./feel-ui.ts" ])
+      .pipe(ts({
+          target: "es5",
+          noImplicitAny: true,
+          module: 'umd',
+          sourceMap: true,
+          experimentalDecorators: true,
+          "moduleResolution" : "node"
+        }));
+    tsResult.js.pipe(gulp.dest('./'));
+
+    tsResult = gulp.src([ './src/**/*.ts'])
       .pipe(ts({
           target: "es5",
           noImplicitAny: true,
