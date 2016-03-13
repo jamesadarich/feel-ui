@@ -1,0 +1,38 @@
+
+
+feel-table {
+  table {
+    border-collapse: collapse;
+
+    thead {
+      background-color: $primary-color;
+      color: white;
+
+      th {
+        padding: 4px 6px;
+
+        .sort-icon {
+          &.ascending::after {
+            content: "▲";
+          }
+
+          &.descending::after {
+            content: "▼";
+          }
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        &:nth-child(even) {
+          background-color: #eee;
+        }
+
+        td {
+          padding: 4px 6px;
+        }
+      }
+    }
+  }
+}

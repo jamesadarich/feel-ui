@@ -9,9 +9,14 @@
     "buildOnSave": true,
     "compileOnSave": true,
     "exclude": [
-      "**/*.d.ts"
+        "./**/*.d.ts",
+        "./end-to-end-tests/harness/**/*.ts"
+    ],
+    "filesGlob": [
+        "./**/*.ts"
     ],
     "files": [
+        "./end-to-end-tests/protractor-config.ts",
         "./menu-panel.spec.ts"
     ],
     "atom": {

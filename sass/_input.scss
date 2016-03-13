@@ -1,0 +1,21 @@
+feel-input {
+  display: inline-block;
+
+  label {
+    display: block;
+    padding: 4px 6px;
+  }
+
+  input {
+    border: 0;
+    background-color: #eee;
+    border-bottom: 2px solid #ccc;
+    padding: 4px 6px;
+    font-size: 18px;
+    outline: none;
+
+    &:focus, :active {
+      border-bottom-color: $primary-color;
+    }
+  }
+}
