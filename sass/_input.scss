@@ -1,12 +1,16 @@
 feel-input {
-  display: inline-block;
 
   label {
     display: block;
     padding: 4px 6px;
   }
 
-  input {
+  textarea {
+     resize: none;
+  }
+
+  input, textarea {
+    width: 100%;
     border: 0;
     background-color: #eee;
     border-bottom: 2px solid #ccc;
