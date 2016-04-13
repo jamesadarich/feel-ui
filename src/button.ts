@@ -10,8 +10,4 @@ export class ButtonComponent {
 
    @Input() flat: boolean;
    @Input() text: string;
-
-   constructor() {
-     console.log("new button");
-   }
  }

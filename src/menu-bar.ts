@@ -19,7 +19,7 @@ export class MenuBar {
      this.isMenuOpen = false;
    }
 
-   public toggleMenuPanel():void {
+   public toggleMenuPanel() {
      this.isMenuOpen = !this.isMenuOpen
    }
 
