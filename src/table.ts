@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from "angular2/core";
 import { NgClass, NgIf, NgModel } from "angular2/common";
 import { SortPipe } from "./pipes/sort-pipe";
+
 @Component({
     directives: [ NgClass ],
     selector: "feel-table",
