@@ -17,6 +17,7 @@ import { RouterLink } from 'angular2/router';
                     <a [routerLink]="['/Input']"><div class="menu-item">Input</div></a>
                     <a [routerLink]="['/Notifications']"><div class="menu-item">Notifications</div></a>
                     <a [routerLink]="['/Table']"><div class="menu-item">Table</div></a>
+                    <a [routerLink]="['/Slider']"><div class="menu-item">Slider</div></a>
                   </div>
                </div>`
 })

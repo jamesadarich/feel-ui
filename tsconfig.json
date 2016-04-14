@@ -9,7 +9,7 @@
         "experimentalDecorators": true,
         "moduleResolution": "node"
     },
-    "buildOnSave": true,
+    "buildOnSave": false,
     "compileOnSave": true,
     "exclude": [
         "./**/*.d.ts",
@@ -27,6 +27,7 @@
         "./src/menu-panel.ts",
         "./src/notification-provider.ts",
         "./src/pipes/sort-pipe.ts",
+        "./src/slider.ts",
         "./src/table.ts"
     ],
     "atom": {

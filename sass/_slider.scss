@@ -1,0 +1,15 @@
+.slider-track {
+    background-color: gray;
+    height: 2px;
+    position: relative;
+
+    .slider-button {
+        background-color: $primary-color;
+        height: 16px;
+        width: 16px;
+        position: absolute;
+        border-radius: 50%;
+        top: -6px;
+        margin-left: -8px;
+    }
+}

@@ -6,6 +6,7 @@ import {ROUTER_DIRECTIVES, RouteConfig, Router, Location, Route} from 'angular2/
 import { ButtonPage } from "./button-page";
 import { InputPage } from "./input-page";
 import { TablePage } from "./table-page";
+import { SliderPage } from "./slider-page";
 import { NotificationsPage } from "./notifications-page";
 import { MenuBar } from "feel-ui/feel-ui";
 /*import * as FeelUi from "feel-ui/feel-ui";
@@ -21,7 +22,8 @@ console.log("FeelUi", FeelUi);*/
     {path: "/buttons",        component: ButtonPage, name: "Buttons"},
     {path: "/input", component: InputPage, name: "Input"  },
     {path: "/notifications", component: NotificationsPage, name: "Notifications"  },
-    {path: "/table", component: TablePage, name: "Table"  }
+    {path: "/table", component: TablePage, name: "Table"  },
+    {path: "/slider", component: SliderPage, name: "Slider"  }
 ])
 class SiteContainer {
 }
