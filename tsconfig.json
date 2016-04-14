@@ -6,12 +6,14 @@
         "noImplicitAny": true,
         "sourceMap": true,
         "preserveConstEnums": true,
+        "experimentalDecorators": true,
         "moduleResolution": "node"
     },
     "buildOnSave": true,
     "compileOnSave": true,
     "exclude": [
-        "./**/*.d.ts"
+        "./**/*.d.ts",
+        "./node_modules/**/*.*"
     ],
     "filesGlob": [
         "./feel-ui.ts",
