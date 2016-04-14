@@ -1,23 +1,26 @@
-import { Component, Input, Output, EventEmitter } from "angular2/core";
-import { NgClass } from "angular2/common";
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from "angular2/core";
+import { NgModel } from "angular2/common";
 @Component({
-    directives: [ NgClass ],
+    directives: [  ],
     selector: "feel-slider",
     template: `<div class="slider-track">
-                  <div class="slider-button" [style.left]="_offset" (mousedown)="_startDrag($event)"></div>
+                  <div class="slider-button" [style.left]="_getOffset()" (mousedown)="_startDrag($event)"></div>
                </div>`
 })
 export class Slider {
 
    @Input()
    value: number;
+
    @Output()
    valueChange = new EventEmitter();
 
-   private _offset: string;
+   private _offset: string = "20%";
+   private _getOffset() {
+     return this._offset;
+   }
 
    private _buttonElement: HTMLElement;
-
 
    @Input()
    maximum: number;
@@ -61,11 +64,11 @@ export class Slider {
 
       this._calculateOffset();
       this._buttonElement.style.left = this._offset;
-      console.log(this.value);
+      //console.log(this.value);
 
       event.preventDefault();
 
-      this.valueChange.emit(this.value);
+      this.valueChange.next(this.value);
    }
 
    private _stopDrag() {
