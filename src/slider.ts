@@ -1,4 +1,4 @@
-import { Component, Input, Output } from "angular2/core";
+import { Component, Input, Output, EventEmitter } from "angular2/core";
 import { NgClass } from "angular2/common";
 @Component({
     directives: [ NgClass ],
@@ -11,10 +11,13 @@ export class Slider {
 
    @Input()
    value: number;
+   @Output()
+   valueChange = new EventEmitter();
 
    private _offset: string;
 
    private _buttonElement: HTMLElement;
+
 
    @Input()
    maximum: number;
@@ -61,6 +64,8 @@ export class Slider {
       console.log(this.value);
 
       event.preventDefault();
+
+      this.valueChange.emit(this.value);
    }
 
    private _stopDrag() {
