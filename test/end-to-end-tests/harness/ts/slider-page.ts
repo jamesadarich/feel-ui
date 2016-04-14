@@ -6,7 +6,7 @@ import { FORM_DIRECTIVES, NgModel } from "angular2/common";
     selector: "slider-page",
     template: `<h1>Slider</h1>
                <feel-slider [(value)]="value" [maximum]="maximum"></feel-slider>
-               <p>Value: {{something}}</p>`
+               <p>Value: {{value}}</p>`
 })
 export class SliderPage {
 
