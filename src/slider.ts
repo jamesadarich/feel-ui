@@ -59,6 +59,8 @@ export class Slider {
       this._calculateOffset();
       this._buttonElement.style.left = this._offset;
       console.log(this.value);
+
+      event.preventDefault();
    }
 
    private _stopDrag() {
