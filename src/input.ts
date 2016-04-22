@@ -5,13 +5,14 @@ import { NgClass, NgModel, NgIf } from "angular2/common";
     selector: "feel-input",
     template: `<label>{{label}}</label>
                <textarea *ngIf="multiline" [ngModel]=value (ngModelChange)="onInput($event)" [rows]=_rows></textarea>
-               <input *ngIf="!multiline" type="text" [ngModel]=value (ngModelChange)="onInput($event)" />`
+               <input *ngIf="!multiline" [type]=type [ngModel]=value (ngModelChange)="onInput($event)" />`
 })
 export class InputComponent {
 
    @Input() label: string;
    @Input() value: string;
    @Input() multiline: boolean = false;
+   @Input() type: string = "text";
    @Output() valueChange = new EventEmitter();
 
    private _rows: number = 2;
