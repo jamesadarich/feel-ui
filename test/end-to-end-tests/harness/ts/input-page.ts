@@ -5,6 +5,7 @@ import { InputComponent } from "feel-ui/feel-ui";
     selector: "input-page",
     template: `<h1>Input</h1>
                <feel-input [(value)]="something"></feel-input>
+               <feel-input [(value)]="something" [type]="'password'"></feel-input>
                <feel-input [multiline]=true [(value)]="something"></feel-input>
                <p>Value: {{something}}</p>`
 })
