@@ -8,6 +8,7 @@ import { InputComponent } from "./src/input";
 import { NotificationProvider } from "./src/notification-provider";
 import { TableComponent } from "./src/table";
 import { Slider } from "./src/slider";
+import { Checkbox } from "./src/checkbox";
 
 export {
    ButtonComponent,
@@ -16,5 +17,6 @@ export {
    InputComponent,
    NotificationProvider,
    TableComponent,
-   Slider
+   Slider,
+   Checkbox
 };

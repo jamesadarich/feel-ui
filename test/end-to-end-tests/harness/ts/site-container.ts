@@ -7,6 +7,7 @@ import { ButtonPage } from "./button-page";
 import { InputPage } from "./input-page";
 import { TablePage } from "./table-page";
 import { SliderPage } from "./slider-page";
+import { CheckboxPage } from "./checkbox-page";
 import { NotificationsPage } from "./notifications-page";
 import { MenuBar } from "feel-ui/feel-ui";
 /*import * as FeelUi from "feel-ui/feel-ui";
@@ -23,7 +24,8 @@ console.log("FeelUi", FeelUi);*/
     {path: "/input", component: InputPage, name: "Input"  },
     {path: "/notifications", component: NotificationsPage, name: "Notifications"  },
     {path: "/table", component: TablePage, name: "Table"  },
-    {path: "/slider", component: SliderPage, name: "Slider"  }
+    {path: "/slider", component: SliderPage, name: "Slider"  },
+    {path: "/checkbox", component: CheckboxPage, name: "Checkbox"  }
 ])
 class SiteContainer {
 }

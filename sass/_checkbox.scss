@@ -1,0 +1,39 @@
+feel-checkbox {
+
+   cursor: pointer;
+   display: block;
+
+   svg {
+      width: 20px;
+      height: 20px;
+      overflow: visible;
+      padding: 2px;
+
+      &.checked {
+         path {
+            stroke-dashoffset: 0;
+         }
+      }
+   }
+
+   path, rect {
+      stroke-width: 2px;
+      fill: none;
+   }
+
+   path {
+      stroke: red;
+      stroke-dashoffset: 26px;
+      stroke-dasharray: 26px;
+      transition: stroke-dashoffset 0.4s ease;
+   }
+
+   rect {
+      stroke: #666;
+   }
+
+   label {
+      vertical-align: top;
+      cursor: pointer;
+   }
+}
