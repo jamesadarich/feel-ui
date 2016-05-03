@@ -1,4 +1,4 @@
-import { Component, Input, HostListener } from "angular2/core";
+import { Component, Input, HostListener, HostBinding } from "angular2/core";
 import { NgClass } from "angular2/common";
 
 @Component({
@@ -12,14 +12,28 @@ import { NgClass } from "angular2/common";
 })
 export class Checkbox {
 
+   @HostBinding("tabindex")
+   tabIndex = 0;
+
    @Input()
    checked: boolean;
 
    @Input()
    label: string;
 
-   @HostListener('click', ['$event.target'])
-     _toggleClicked(event: MouseEvent) {
+   @Input()
+   @HostBinding("disabled")
+   disabled: boolean;
+
+   @HostListener("keypress", ["$event"])
+   _onKeyPress(event: KeyboardEvent) {
+      if (event.charCode === 13 || event.charCode === 32 ) {
+         this._toggleClicked();
+      }
+   }
+
+   @HostListener("click")
+     _toggleClicked() {
        this.checked = !this.checked;
      }
  }

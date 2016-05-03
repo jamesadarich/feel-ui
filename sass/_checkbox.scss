@@ -17,19 +17,34 @@ feel-checkbox {
    }
 
    path, rect {
-      stroke-width: 2px;
       fill: none;
    }
 
    path {
-      stroke: red;
+      stroke-width: 4px;
+      stroke: $primary-color;
       stroke-dashoffset: 26px;
       stroke-dasharray: 26px;
       transition: stroke-dashoffset 0.4s ease;
    }
 
    rect {
+      stroke-width: 2px;
       stroke: #666;
+   }
+
+   &:focus {
+      rect {
+         stroke: $primary-color;
+      }
+
+      outline: none;
+   }
+
+   &[disabled] {
+      rect, path {
+         stroke: #ccc;
+      }
    }
 
    label {

@@ -5,7 +5,9 @@ import { Checkbox, NotificationProvider } from "feel-ui/feel-ui";
     selector: "checkbox-page",
     template: `<h1>Checkboxes</h1>
                <feel-checkbox [checked]="true" [label]="'checked'"></feel-checkbox>
-               <feel-checkbox [checked]="false" [label]="'not checked'"></feel-checkbox>`
+               <feel-checkbox [checked]="false" [label]="'not checked'"></feel-checkbox>
+               <feel-checkbox [checked]="true" [disabled]="true" [label]="'disabled checked'"></feel-checkbox>
+               <feel-checkbox [checked]="false" [disabled]="true" [label]="'disabled not checked'"></feel-checkbox>`
 })
 export class CheckboxPage {
 
