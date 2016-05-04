@@ -1,4 +1,4 @@
-import { Component, Input, HostListener, HostBinding } from "angular2/core";
+import { Component, Input, HostListener, HostBinding, EventEmitter, Output } from "angular2/core";
 import { NgClass } from "angular2/common";
 
 @Component({
@@ -18,6 +18,9 @@ export class Checkbox {
    @Input()
    checked: boolean;
 
+   @Output()
+   checkedChange = new EventEmitter();
+
    @Input()
    label: string;
 
@@ -36,6 +39,7 @@ export class Checkbox {
      _toggleClicked() {
         if(!this.disabled) {
           this.checked = !this.checked;
+          this.checkedChange.emit(this.checked);
        }
      }
  }
