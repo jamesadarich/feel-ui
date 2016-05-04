@@ -22,7 +22,7 @@ export class Checkbox {
    label: string;
 
    @Input()
-   @HostBinding("disabled")
+   @HostBinding("attr.disabled")
    disabled: boolean;
 
    @HostListener("keypress", ["$event"])
@@ -34,6 +34,8 @@ export class Checkbox {
 
    @HostListener("click")
      _toggleClicked() {
-       this.checked = !this.checked;
+        if(!this.disabled) {
+          this.checked = !this.checked;
+       }
      }
  }
