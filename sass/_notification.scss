@@ -2,23 +2,30 @@
     position: fixed;
     top: 100px;
     right: 50%;
-    text-align: center;
 
     .notification {
       padding: 8px;
       margin: 8px;
       display: block;
+      box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 5px 8px 0 rgba(0, 0, 0, 0.14), 0 1px 14px 0 rgba(0, 0, 0, 0.12);
+      background-color: #fff;
+      border: 2px solid #000;
+      border-left-width: 48px;
 
       &.success {
-          border: 1px solid hsl(113, 80%, 35%);
-          color: hsl(113, 80%, 35%);
-          background-color: hsl(113, 60%, 80%);
+          border-color: hsl(113, 80%, 35%);
       }
 
       &.error {
-          border: 1px solid hsl(0, 80%, 35%);
-          color: hsl(0, 80%, 35%);
-          background-color: hsl(0, 60%, 80%);
+          border-color: hsl(0, 80%, 35%);
+      }
+
+      .title {
+        font-size: 24px;
+      }
+
+      .message {
+        color: #666;
       }
     }
 }
