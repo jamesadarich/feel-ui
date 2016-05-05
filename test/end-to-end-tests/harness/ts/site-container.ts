@@ -10,8 +10,8 @@ import { SliderPage } from "./slider-page";
 import { CheckboxPage } from "./checkbox-page";
 import { NotificationsPage } from "./notifications-page";
 import { MenuBar } from "feel-ui/feel-ui";
-/*import * as FeelUi from "feel-ui/feel-ui";
-console.log("FeelUi", FeelUi);*/
+import * as NineTails from "nine-tails";
+
 @Component({
     directives: [ ButtonPage, MenuBar, ROUTER_DIRECTIVES ],
     selector: "my-app",
@@ -28,5 +28,15 @@ console.log("FeelUi", FeelUi);*/
     {path: "/checkbox", component: CheckboxPage, name: "Checkbox"  }
 ])
 class SiteContainer {
+
+  public constructor () {
+    let theme = new NineTails.Theme();
+    var rule = theme.createRule("feel-menu-bar");
+
+    var color = new NineTails.Color();
+    color.set("red");
+
+    rule.linkStyle("color", color);
+  }
 }
 bootstrap(SiteContainer, [ROUTER_PROVIDERS, provide(LocationStrategy, {useClass: PathLocationStrategy })]);
