@@ -17,9 +17,10 @@ feel-input {
     padding: 4px 6px;
     font-size: 18px;
     outline: none;
+    box-sizing: border-box;
 
     &:focus, :active {
-      border-bottom-color: $primary-color;
+      border-bottom-color: $feel-primary-hue-1;
     }
   }
 }

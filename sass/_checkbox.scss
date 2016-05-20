@@ -22,7 +22,7 @@ feel-checkbox {
 
    path {
       stroke-width: 4px;
-      stroke: $primary-color;
+      stroke: $feel-primary-hue-1;
       stroke-dashoffset: 26px;
       stroke-dasharray: 26px;
       transition: stroke-dashoffset 0.4s ease;
@@ -35,7 +35,7 @@ feel-checkbox {
 
    &:focus {
       rect {
-         stroke: $primary-color;
+         stroke: $feel-primary-hue-1;
       }
 
       outline: none;

@@ -1,5 +1,5 @@
 feel-menu-bar {
-  background-color: $primary-color;
+  background-color: $feel-primary-hue-1;
   color: white;
   display: block;
   position: fixed;
@@ -20,7 +20,7 @@ feel-menu-bar {
 }
 
 .menu-title {
-  background-color: $primary-color;
+  background-color: $feel-primary-hue-1;
   h1 {
     display: inline;
   }
@@ -43,7 +43,7 @@ feel-menu-panel {
   }
 
 
-    background-color: $primary-color;
+    background-color: $feel-primary-hue-1;
 
   .menu-title {
     padding: 8px;

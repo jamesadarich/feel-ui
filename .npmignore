@@ -2,9 +2,6 @@
 test
 karma.conf.js
 
-#source
-sass
-
 #TypeScript
 typings
 tsd.json
