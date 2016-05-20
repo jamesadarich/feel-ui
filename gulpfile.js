@@ -95,10 +95,10 @@ gulp.task('bundle-sass', function () {
    .pipe(gulp.dest('./dist'));
 });
 
-gulp.task("bundle-typescript", ["build"], function () {
+gulp.task("bundle-typescript", /*["build"],*/ function () {
   var b = browserify({
     standalone : 'FeelUi',
-    entries: "./feel-ui.ts",
+    entries: ["./feel-ui.ts", "./typings/main.d.ts" ],
     debug: true
   });
   b.plugin(tsify, {

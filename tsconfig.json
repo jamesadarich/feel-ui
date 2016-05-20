@@ -17,7 +17,8 @@
     ],
     "filesGlob": [
         "./feel-ui.ts",
-        "./src/**/*.ts"
+        "./src/**/*.ts",
+        "./typings/main.d.ts"
     ],
     "files": [
         "./feel-ui.ts",
