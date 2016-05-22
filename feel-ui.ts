@@ -4,16 +4,20 @@ import { MenuPanel } from "./src/menu-panel";
 import { InputComponent } from "./src/input";
 import { NotificationProvider } from "./src/notification-provider";
 import { TableComponent } from "./src/table";
-import { Slider } from "./src/slider";
-import { Checkbox } from "./src/checkbox";
+import { SliderComponent } from "./src/slider";
+import { CheckboxComponent } from "./src/checkbox";
+import { ToggleButtonComponent } from "./src/toggle-button";
+import { ToggleButtonGroupComponent } from "./src/toggle-button-group";
 
 export {
    ButtonComponent,
+   ToggleButtonComponent,
+   ToggleButtonGroupComponent,
    MenuBar,
    MenuPanel,
    InputComponent,
    NotificationProvider,
    TableComponent,
-   Slider,
-   Checkbox
+   SliderComponent,
+   CheckboxComponent
 };

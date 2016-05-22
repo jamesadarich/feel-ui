@@ -1,8 +1,8 @@
 import { Component } from "angular2/core";
-import { Slider, InputComponent } from "feel-ui/feel-ui";
+import { SliderComponent, InputComponent } from "feel-ui/feel-ui";
 import { FORM_DIRECTIVES, NgModel } from "angular2/common";
 @Component({
-    directives: [ Slider, InputComponent ],
+    directives: [ SliderComponent, InputComponent ],
     selector: "slider-page",
     template: `<h1>Slider</h1>
                <feel-slider [(value)]="value" [maximum]="maximum"></feel-slider>

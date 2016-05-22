@@ -30,7 +30,9 @@
         "./src/notification-provider.ts",
         "./src/pipes/sort-pipe.ts",
         "./src/slider.ts",
-        "./src/table.ts"
+        "./src/table.ts",
+        "./src/toggle-button-group.ts",
+        "./src/toggle-button.ts"
     ],
     "atom": {
         "rewriteTsconfig": true

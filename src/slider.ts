@@ -7,7 +7,7 @@ import { NgModel } from "angular2/common";
                   <div class="slider-button" [style.left]="_getOffset()" (mousedown)="_startDrag($event)"></div>
                </div>`
 })
-export class Slider {
+export class SliderComponent {
 
    @Input()
    value: number;

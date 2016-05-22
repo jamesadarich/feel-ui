@@ -1,7 +1,7 @@
 import { Component } from "angular2/core";
-import { Checkbox, NotificationProvider } from "feel-ui/feel-ui";
+import { CheckboxComponent, NotificationProvider } from "feel-ui/feel-ui";
 @Component({
-    directives: [ Checkbox ],
+    directives: [ CheckboxComponent ],
     selector: "checkbox-page",
     template: `<h1>Checkboxes</h1>
                <feel-checkbox [(checked)]=_checked [label]="'checked'"></feel-checkbox> {{_checked}}

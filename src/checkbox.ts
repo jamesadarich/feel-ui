@@ -10,7 +10,7 @@ import { NgClass } from "angular2/common";
                </svg>
                <label>{{label}}</label>`
 })
-export class Checkbox {
+export class CheckboxComponent {
 
    @HostBinding("tabindex")
    tabIndex = 0;
