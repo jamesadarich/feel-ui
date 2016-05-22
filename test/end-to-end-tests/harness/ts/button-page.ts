@@ -10,11 +10,18 @@ import { ButtonComponent, NotificationProvider, ToggleButtonComponent, ToggleBut
                <feel-button [flat]="true" [primary]="true" [text]="'primary flat'" (click)=onClick()></feel-button>
                <h2>Toggle Buttons</h2>
                <feel-toggle-button text="Toggle me"></feel-toggle-button>
-               <feel-toggle-button-group [textProperty]="'name'" [items]="toggleItems"></feel-toggle-button-group>`
+               <div>
+                <label>Toggle group</label>
+                <feel-toggle-button-group [textProperty]="'name'" [items]="toggleItems"></feel-toggle-button-group>
+               </div>
+               <div>
+                <label>Multiselect toggle group</label>
+                <feel-toggle-button-group [textProperty]="'name'" [items]="toggleItems" [multiselect]=true></feel-toggle-button-group>
+               </div>`
 })
 export class ButtonPage {
 
-  toggleItems = [{ name: "one" }, { name: "two" }];
+  toggleItems = [{ name: "one" }, { name: "two" }, { name: "three" }, { name: "four" }, { name: "five" }];
 
    onClick() {
      console.log("clicked");
