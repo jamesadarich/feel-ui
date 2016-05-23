@@ -10,7 +10,7 @@ import { SliderPage } from "./slider-page";
 import { CheckboxPage } from "./checkbox-page";
 import { NotificationsPage } from "./notifications-page";
 import { MenuBar } from "feel-ui/feel-ui";
-import * as NineTails from "nine-tails";
+//import * as NineTails from "nine-tails";
 
 @Component({
     directives: [ ButtonPage, MenuBar, ROUTER_DIRECTIVES ],
@@ -30,13 +30,13 @@ import * as NineTails from "nine-tails";
 class SiteContainer {
 
   public constructor () {
-    let theme = new NineTails.Theme();
+    /*let theme = new NineTails.Theme();
     var rule = theme.createRule("feel-menu-bar");
 
     var color = new NineTails.Color();
     color.set("red");
 
-    rule.linkStyle("color", color);
+    rule.linkStyle("color", color);*/
   }
 }
 bootstrap(SiteContainer, [ROUTER_PROVIDERS, provide(LocationStrategy, {useClass: PathLocationStrategy })]);

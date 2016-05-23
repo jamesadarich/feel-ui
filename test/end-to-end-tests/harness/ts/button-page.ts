@@ -12,16 +12,27 @@ import { ButtonComponent, NotificationProvider, ToggleButtonComponent, ToggleBut
                <feel-toggle-button text="Toggle me"></feel-toggle-button>
                <div>
                 <label>Toggle group</label>
-                <feel-toggle-button-group [textProperty]="'name'" [items]="toggleItems"></feel-toggle-button-group>
+                <feel-toggle-button-group [textProperty]="'name'" [items]="toggleItems" [(selectedItem)]="selectedToggleItem"></feel-toggle-button-group>
+                {{selectedToggleItem | json}}
                </div>
                <div>
                 <label>Multiselect toggle group</label>
-                <feel-toggle-button-group [textProperty]="'name'" [items]="toggleItems" [multiselect]=true></feel-toggle-button-group>
+                <feel-toggle-button-group [textProperty]="'name'" [items]="toggleItems" [(selectedItems)]="selectedToggleItems" [multiselect]=true></feel-toggle-button-group>
+                {{selectedToggleItems | json}}
                </div>`
 })
 export class ButtonPage {
 
-  toggleItems = [{ name: "one" }, { name: "two" }, { name: "three" }, { name: "four" }, { name: "five" }];
+   public toggleItems: Array<any>;
+   public selectedToggleItems: Array<any>;
+   public selectedToggleItem: any;
+
+   public constructor () {
+      this.toggleItems = [{ name: "one" }, { name: "two" }, { name: "three" }, { name: "four" }, { name: "five" }];
+
+      this.selectedToggleItems = [ this.toggleItems[1], this.toggleItems[3]];
+      this.selectedToggleItem = this.toggleItems[2];
+   }
 
    onClick() {
      console.log("clicked");
