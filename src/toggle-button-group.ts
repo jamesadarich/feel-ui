@@ -19,8 +19,8 @@ export class ToggleButtonGroupComponent {
    textProperty: string;
 
    @Input()
-   getToggleButtonText(something: any): string {
-     return something[this.textProperty];
+   getToggleButtonText(item: any): string {
+     return item[this.textProperty];
    }
 
    @Input()
