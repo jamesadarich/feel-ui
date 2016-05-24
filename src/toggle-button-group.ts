@@ -5,7 +5,7 @@ import { ToggleButtonComponent } from "./toggle-button";
 @Component({
     directives: [ NgFor, ToggleButtonComponent ],
     selector: "feel-toggle-button-group",
-    template: `<feel-toggle-button *ngFor="#item of items" [text]="textPropertySomething(item)" (select)="_onChildSelect($event)" (deselect)="_emitSelectedItemsChange()" [selected]="_itemIsSelected(item)"></feel-toggle-button>`
+    template: `<feel-toggle-button *ngFor="#item of items" [text]="getToggleButtonText(item)" (select)="_onChildSelect($event)" (deselect)="_emitSelectedItemsChange()" [selected]="_itemIsSelected(item)"></feel-toggle-button>`
 })
 export class ToggleButtonGroupComponent {
 
@@ -19,7 +19,7 @@ export class ToggleButtonGroupComponent {
    textProperty: string;
 
    @Input()
-   textPropertySomething(something: any): string {
+   getToggleButtonText(something: any): string {
      return something[this.textProperty];
    }
 
