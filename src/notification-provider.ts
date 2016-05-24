@@ -4,11 +4,11 @@ export class NotificationProvider {
 
   public constructor() {
 
-    this._notificationElement = document.getElementById("notification-stream");
+    this._notificationElement = document.getElementById("feel-notification-stream");
 
     if (this._notificationElement === null) {
       this._notificationElement = document.createElement("div");
-      this._notificationElement.id = "notification-stream";
+      this._notificationElement.id = "feel-notification-stream";
       document.body.appendChild(this._notificationElement);
     }
 

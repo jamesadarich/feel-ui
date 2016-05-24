@@ -9,7 +9,10 @@ import { CheckboxComponent } from "./src/checkbox";
 import { ToggleButtonComponent } from "./src/toggle-button";
 import { ToggleButtonGroupComponent } from "./src/toggle-button-group";
 
+import { BaseDialog } from "./src/base-dialog";
+
 export {
+   BaseDialog,
    ButtonComponent,
    ToggleButtonComponent,
    ToggleButtonGroupComponent,
