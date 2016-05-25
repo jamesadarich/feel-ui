@@ -1,0 +1,39 @@
+feel-dropdown {
+  display: block;
+  cursor: pointer;
+  position: relative;
+
+  div, feel-dropdown-item {
+    padding: 8px;
+  }
+
+  .placeholder, .selected-item {
+    background-color: #eee;
+    border-bottom: 2px solid #ccc;
+    outline: 0;
+
+    &:focus, :active {
+      border-bottom-color: $feel-primary-hue-1;
+    }
+  }
+
+  feel-dropdown-item {
+    display: block;
+    border-top: 1px solid #eee;
+  }
+
+  .item-list {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: white;
+
+    &.show {
+      max-height: 200px;
+      overflow: auto;
+    }
+  }
+}

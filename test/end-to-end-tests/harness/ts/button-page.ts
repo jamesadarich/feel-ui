@@ -1,7 +1,7 @@
 import { Component } from "angular2/core";
-import { ButtonComponent, NotificationProvider, ToggleButtonComponent, ToggleButtonGroupComponent } from "feel-ui/feel-ui";
+import { ButtonComponent, NotificationProvider, ToggleButtonComponent, ToggleButtonGroupComponent, DropdownComponent } from "feel-ui/feel-ui";
 @Component({
-    directives: [ ButtonComponent, ToggleButtonComponent, ToggleButtonGroupComponent ],
+    directives: [ ButtonComponent, ToggleButtonComponent, ToggleButtonGroupComponent, DropdownComponent ],
     selector: "button-page",
     template: `<h1>Buttons</h1>
                <feel-button [flat]="false" [text]="'raised'"></feel-button>
@@ -17,11 +17,17 @@ import { ButtonComponent, NotificationProvider, ToggleButtonComponent, ToggleBut
                <div>
                 <label>Multiselect toggle group</label>
                 <feel-toggle-button-group [textProperty]="'name'" [items]="toggleItems" [multiselect]=true></feel-toggle-button-group>
-               </div>`
+               </div>
+               <feel-dropdown [(selectedItem)]="selectedDropdownItem" [placeholderText]="'Select one'" [items]="dropdownItems" [textPropertyName]="'name'"></feel-dropdown>
+               {{selectedDropdownItem | json}}`
 })
 export class ButtonPage {
 
   toggleItems = [{ name: "one" }, { name: "two" }, { name: "three" }, { name: "four" }, { name: "five" }];
+
+  dropdownItems = [{ name: "one" }, { name: "two" }, { name: "three" }, { name: "four" }, { name: "five" }];
+
+  selectedDropdownItem = null;
 
    onClick() {
      console.log("clicked");

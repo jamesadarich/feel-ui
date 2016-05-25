@@ -24,6 +24,7 @@
         "./feel-ui.ts",
         "./src/button.ts",
         "./src/checkbox.ts",
+        "./src/dropdown.ts",
         "./src/input.ts",
         "./src/menu-bar.ts",
         "./src/menu-panel.ts",
