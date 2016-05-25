@@ -10,7 +10,10 @@ import { ToggleButtonComponent } from "./src/toggle-button";
 import { ToggleButtonGroupComponent } from "./src/toggle-button-group";
 import { DropdownComponent } from "./src/dropdown";
 
+import { BaseDialog } from "./src/base-dialog";
+
 export {
+   BaseDialog,
    ButtonComponent,
    DropdownComponent,
    ToggleButtonComponent,

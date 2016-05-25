@@ -22,6 +22,7 @@
     ],
     "files": [
         "./feel-ui.ts",
+        "./src/base-dialog.ts",
         "./src/button.ts",
         "./src/checkbox.ts",
         "./src/dropdown.ts",
