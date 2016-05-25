@@ -1,9 +1,6 @@
 import { Component } from "angular2/core";
-<<<<<<< HEAD
-import { ButtonComponent, NotificationProvider, ToggleButtonComponent, ToggleButtonGroupComponent, DropdownComponent } from "feel-ui/feel-ui";
-=======
-import { ButtonComponent, NotificationProvider, ToggleButtonComponent, ToggleButtonGroupComponent, BaseDialog } from "feel-ui/feel-ui";
->>>>>>> 0194fdc379a752f497977ece863ffc266c99cbdc
+import { ButtonComponent, NotificationProvider, ToggleButtonComponent, ToggleButtonGroupComponent, DropdownComponent, BaseDialog } from "feel-ui/feel-ui";
+
 @Component({
     directives: [ ButtonComponent, ToggleButtonComponent, ToggleButtonGroupComponent, DropdownComponent ],
     selector: "button-page",
