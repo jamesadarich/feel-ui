@@ -1,4 +1,4 @@
-import { Component, Input, Output, ViewChildren, EventEmitter } from "angular2/core";
+import { Component, Input, Output, ViewChildren, EventEmitter, HostListener, HostBinding } from "angular2/core";
 import { NgFor, NgIf, NgClass } from "angular2/common";
 
 @Component({
@@ -18,8 +18,8 @@ export class DropdownItem<TItem> {
   selector: "feel-dropdown",
   directives: [ NgIf, NgFor, NgClass, DropdownItem ],
   template: `
-    <div *ngIf="!selectedItem" class="placeholder" tabindex="0" (click)="showItems()">{{placeholderText}}</div>
-    <div *ngIf="selectedItem" class="selected-item" tabindex="0" (click)="showItems()">{{selectedItem[textPropertyName]}}</div>
+    <div *ngIf="!selectedItem" class="placeholder" (click)="showItems()">{{placeholderText}}</div>
+    <div *ngIf="selectedItem" class="selected-item" (click)="showItems()">{{selectedItem[textPropertyName]}}</div>
     <div class="item-list" [ngClass]="{ show: _itemsVisible }">
       <feel-dropdown-item *ngFor="#item of items" [item]="item" [textPropertyName]="textPropertyName" (click)="setSelectedItem(item)"></feel-dropdown-item>
     </div>`
@@ -27,6 +27,9 @@ export class DropdownItem<TItem> {
 export class DropdownComponent<TItem> {
 
   private _itemsVisible: boolean;
+
+  @HostBinding("tabindex")
+  private _tabIndex = 0;
 
   @Input()
   placeholderText: string;
@@ -56,7 +59,9 @@ export class DropdownComponent<TItem> {
     this._itemsVisible = true;
   }
 
-  public hideItems() {
+  @HostListener("blur", ["$event"])
+  public hideItems(e: any) {
+    console.log(e);
     this._itemsVisible = false;
   }
 

@@ -2,6 +2,7 @@ feel-dropdown {
   display: block;
   cursor: pointer;
   position: relative;
+  outline: 0;
 
   div, feel-dropdown-item {
     padding: 8px;
@@ -10,11 +11,12 @@ feel-dropdown {
   .placeholder, .selected-item {
     background-color: #eee;
     border-bottom: 2px solid #ccc;
-    outline: 0;
+  }
 
-    &:focus, :active {
-      border-bottom-color: $feel-primary-hue-1;
-    }
+  &:focus, :active {
+    .placeholder, .selected-item {
+       border-bottom-color: $feel-primary-hue-1;
+   }
   }
 
   feel-dropdown-item {

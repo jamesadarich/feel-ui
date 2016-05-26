@@ -77,9 +77,14 @@ export class ToggleButtonGroupComponent {
       else {
          for (let button of this.buttons.toArray()) {
             if (button.selected) {
-               this.selectedItemChange.emit(this.items[this.buttons.toArray().indexOf(button)])
+               this.selectedItem = this.items[this.buttons.toArray().indexOf(button)];
+               this.selectedItemChange.emit(this.selectedItem);
+               return;
             }
          }
+
+         this.selectedItem = null;
+         this.selectedItemChange.emit(this.selectedItem);
       }
    }
  }
