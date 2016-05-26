@@ -36,16 +36,6 @@ liveServer.start(params);
    });
 });
 
-gulp.task('sass', function () {
-   gulp.src('./sass/**/*.scss')
-   .pipe(sass().on('error', sass.logError))
-   .pipe(gulp.dest('./css'));
-});
-
-gulp.task('sass:watch', function () {
-   gulp.watch('./sass/**/*.scss', ['sass']);
-});
-
 gulp.task('dist-typescript', function () {
   var tsResult = gulp.src('./src/**/*.ts')
        .pipe(ts({
@@ -62,8 +52,7 @@ gulp.task('dist-typescript', function () {
 
 gulp.task(
    'dev',
-   ['sass:watch',
-   'dev-site'],
+   ['dev-site'],
    function () {
 
    });

@@ -12,7 +12,6 @@
     "buildOnSave": false,
     "compileOnSave": true,
     "exclude": [
-        "./**/*.d.ts",
         "./node_modules/**/*.*"
     ],
     "filesGlob": [
@@ -22,19 +21,35 @@
     ],
     "files": [
         "./feel-ui.ts",
+        "./src/base-dialog.d.ts",
         "./src/base-dialog.ts",
+        "./src/button.d.ts",
         "./src/button.ts",
+        "./src/checkbox.d.ts",
         "./src/checkbox.ts",
+        "./src/dropdown.d.ts",
         "./src/dropdown.ts",
+        "./src/feel-ui.d.ts",
+        "./src/feel.d.ts",
+        "./src/input.d.ts",
         "./src/input.ts",
+        "./src/menu-bar.d.ts",
         "./src/menu-bar.ts",
+        "./src/menu-panel.d.ts",
         "./src/menu-panel.ts",
+        "./src/notification-provider.d.ts",
         "./src/notification-provider.ts",
+        "./src/pipes/sort-pipe.d.ts",
         "./src/pipes/sort-pipe.ts",
+        "./src/slider.d.ts",
         "./src/slider.ts",
+        "./src/table.d.ts",
         "./src/table.ts",
+        "./src/toggle-button-group.d.ts",
         "./src/toggle-button-group.ts",
-        "./src/toggle-button.ts"
+        "./src/toggle-button.d.ts",
+        "./src/toggle-button.ts",
+        "./typings/main.d.ts"
     ],
     "atom": {
         "rewriteTsconfig": true

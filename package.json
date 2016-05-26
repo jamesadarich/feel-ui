@@ -5,6 +5,9 @@
   "main": "dist/feel-ui.js",
   "scripts": {
     "build-sass": "node-sass --include-path scss sass/feel-ui.scss dist/feel-ui.css",
+    "bundle-typescript": "npm run build-typescript",
+    "bundle-typescript-amd": "tsc --module amd --outFile ./dist/test.amd.js",
+    "bundle-typescript-system": "tsc --module system --outFile ./dist/test.system.js",
     "bundle-sass": "node-sass --output-style compressed --include-path scss sass/feel-ui.scss dist/feel-ui.min.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -33,7 +36,6 @@
     "es6-module-loader": "^0.17.9",
     "express": "^4.13.4",
     "gulp": "^3.9.0",
-    "gulp-sass": "^2.1.0",
     "gulp-typescript": "^2.9.2",
     "jasmine": "^2.4.1",
     "karma": "^0.13.16",
@@ -50,7 +52,7 @@
     "serve-static": "^1.10.2",
     "systemjs": "^0.19.9",
     "tsify": "^0.13.2",
-    "typescript": "^1.7.5",
+    "typescript": "^1.8.0",
     "vinyl-source-stream": "^1.1.0"
   }
 }
