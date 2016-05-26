@@ -60,8 +60,11 @@ export class DropdownComponent<TItem> {
   }
 
   @HostListener("blur", ["$event"])
-  public hideItems(e: any) {
-    console.log(e);
+  private _onBlur(event: FocusEvent) {
+    this.hideItems();
+  }
+
+  public hideItems() {
     this._itemsVisible = false;
   }
 

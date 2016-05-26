@@ -4,6 +4,8 @@
   "description": "",
   "main": "dist/feel-ui.js",
   "scripts": {
+    "build-sass": "node-sass --include-path scss sass/feel-ui.scss dist/feel-ui.css",
+    "bundle-sass": "node-sass --output-style compressed --include-path scss sass/feel-ui.scss dist/feel-ui.min.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -47,7 +49,6 @@
     "protractor": "^3.0.0",
     "serve-static": "^1.10.2",
     "systemjs": "^0.19.9",
-    "tsd": "^0.6.5",
     "tsify": "^0.13.2",
     "typescript": "^1.7.5",
     "vinyl-source-stream": "^1.1.0"

@@ -68,10 +68,6 @@ gulp.task(
 
    });
 
-gulp.task("integration-test", function () {
-
-});
-
 gulp.task("start-end-to-end-server", /*["bundle"],*/ function () {
   var app = express();
   app.use(serveStatic(__dirname + "/test/end-to-end-tests/harness", {'index': ['index.html']}));
