@@ -5,7 +5,7 @@ module.exports = {
   entry: './feel-ui',
   output: {
     filename: './dist/feel-ui.js',
-    library: "FeelUi",
+    library: "feel-ui/feel-ui",
     libraryTarget: "umd"
   },
   resolve: {

@@ -17,18 +17,19 @@
       System.config({
 
         defaultJSExtensions: true,
-        /*
+
         packages: {
-           "/dist": {
+           /*"/dist": {
              defaultExtension: "webpack.js"
-          },
+          },*/
           "/node_modules": {
              defaultExtension: "js"
           }
-       },*/
+       },
+
         map: {
-            'feel-ui': '/dist',
-            'angular2': 'node_modules/angular2',
+            'feel-ui': '',
+            'angular2': '/node_modules/angular2',
             'rxjs': 'node_modules/rxjs',
             'nine-tails': 'node_modules/nine-tails/js/nine-tails'
         }

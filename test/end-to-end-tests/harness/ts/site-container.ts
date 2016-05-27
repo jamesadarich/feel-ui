@@ -1,7 +1,8 @@
 import { Component, provide } from "angular2/core";
 import {bootstrap}    from "angular2/platform/browser"
 //import { RouteConfig,  RouterOutlet } from "angular2/router";
-import {ROUTER_PROVIDERS, LocationStrategy, PathLocationStrategy } from 'angular2/router';
+import {ROUTER_PROVIDERS } from 'angular2/router';
+import { APP_BASE_HREF } from "angular2/platform/common";
 import {ROUTER_DIRECTIVES, RouteConfig, Router, Location, Route} from 'angular2/router';
 import { ButtonPage } from "./button-page";
 import { InputPage } from "./input-page";
@@ -27,7 +28,7 @@ import { MenuBar } from "feel-ui/feel-ui";
     {path: "/slider", component: SliderPage, name: "Slider"  },
     {path: "/checkbox", component: CheckboxPage, name: "Checkbox"  }
 ])
-class SiteContainer {
+export class SiteContainer {
 
   public constructor () {
     /*let theme = new NineTails.Theme();
@@ -39,4 +40,4 @@ class SiteContainer {
     rule.linkStyle("color", color);*/
   }
 }
-bootstrap(SiteContainer, [ROUTER_PROVIDERS, provide(LocationStrategy, {useClass: PathLocationStrategy })]);
+bootstrap(SiteContainer, [ ROUTER_PROVIDERS, provide(APP_BASE_HREF, {useValue: '/'}) ]);
