@@ -4,11 +4,17 @@
   "description": "",
   "main": "dist/feel-ui.js",
   "scripts": {
-    "build-sass": "node-sass --include-path scss sass/feel-ui.scss dist/feel-ui.css",
-    "bundle-typescript": "npm run build-typescript",
-    "bundle-typescript-amd": "tsc --module amd --outFile ./dist/test.amd.js",
-    "bundle-typescript-system": "tsc --module system --outFile ./dist/test.system.js",
-    "bundle-sass": "node-sass --output-style compressed --include-path scss sass/feel-ui.scss dist/feel-ui.min.css",
+    "bundle": "npm run bundle-typescript && npm run bundle-sass",
+    "bundle-typescript": "npm run bundle-typescript-amd && npm run bundle-typescript-system && npm run bundle-typescript-amd-dev && npm run bundle-typescript-system-dev",
+    "bundle-typescript-amd": "tsc --module amd --outFile ./dist/feel-ui.amd.js",
+    "bundle-typescript-system": "tsc --module system --outFile ./dist/feel-ui.js",
+    "ts-wp": "webpack",
+    "bundle-typescript-test": "tsc ./feel-ui.ts ./typings/main.d.ts --module system --outFile ./dist/feel-ui.test.js --moduleResolution node --experimentalDecorators",
+    "bundle-typescript-amd-dev": "tsc --module amd --sourceMap --outFile ./dist/feel-ui.dev.amd.js",
+    "bundle-typescript-system-dev": "tsc --module system --sourceMap --outFile ./dist/feel-ui.dev.js",
+    "bundle-sass": "npm run bundle-sass-min && npm run bundle-sass-pretty",
+    "bundle-sass-min": "node-sass --output-style compressed --include-path scss sass/feel-ui.scss dist/feel-ui.min.css",
+    "bundle-sass-pretty": "node-sass --include-path scss sass/feel-ui.scss dist/feel-ui.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
