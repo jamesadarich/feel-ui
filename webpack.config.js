@@ -5,8 +5,9 @@ module.exports = {
   entry: './feel-ui',
   output: {
     filename: './dist/feel-ui.js',
-    library: "feel-ui/feel-ui",
-    libraryTarget: "umd"
+    library: "FeelUi",
+    libraryTarget: "umd",
+    umdNamedDefine: true
   },
   resolve: {
     extensions: ['', '.webpack.js', '.web.js', '.ts', '.js']
