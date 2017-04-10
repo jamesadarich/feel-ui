@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "declaration": false,
+        "noImplicitAny": true,
+        "sourceMap": false,
+        "preserveConstEnums": true,
+        "experimentalDecorators": true,
+        "moduleResolution": "node",
+        "lib": [
+            "es2015",
+            "dom"
+        ]
+    },
+    "buildOnSave": false,
+    "compileOnSave": true,
+    "include": [
+        "./example.ts"
+    ]
+}
