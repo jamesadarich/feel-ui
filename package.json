@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/jamesrichford/feel-ui",
   "dependencies": {
+    "@angular/core": "^4.0.1",
     "angular2": "^2.0.0-beta.0",
     "es6-promise": "^3.0.2",
     "es6-shim": "^0.33.13",

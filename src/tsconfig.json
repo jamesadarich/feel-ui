@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "declaration": false,
+        "noImplicitAny": true,
+        "sourceMap": false,
+        "preserveConstEnums": true,
+        "experimentalDecorators": true,
+        "moduleResolution": "node"
+    },
+    "buildOnSave": false,
+    "compileOnSave": true,
+    "exclude": [
+        "../node_modules/**/*.*",
+        "../**/*.d.ts"
+    ],
+    "include": [
+        "./feel-ui.module.ts"
+    ]
+}
