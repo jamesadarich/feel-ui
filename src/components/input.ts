@@ -1,7 +1,6 @@
-import { Component, Input, Output, EventEmitter } from "angular2/core";
-import { NgClass, NgModel, NgIf } from "angular2/common";
+import { Component, Input, Output, EventEmitter } from "@angular/core";
+
 @Component({
-    directives: [NgClass, NgIf],
     selector: "feel-input",
     template: `<label>{{label}}</label>
                <textarea *ngIf="multiline" [ngModel]=value (ngModelChange)="onInput($event)" [rows]=_rows></textarea>

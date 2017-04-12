@@ -1,8 +1,6 @@
-import { Component, Input, Output, HostListener, EventEmitter } from "angular2/core";
-import { NgClass } from "angular2/common";
+import { Component, Input, Output, HostListener, EventEmitter } from "@angular/core";
 
 @Component({
-    directives: [ NgClass ],
     selector: "feel-toggle-button",
     template: `<button type="button" [ngClass]=\"{ 'selected': selected }\" >{{text}}</button>`
 })

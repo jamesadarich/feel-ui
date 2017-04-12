@@ -1,11 +1,9 @@
-import { Component, Input, Output, EventEmitter, ViewChildren, QueryList } from "angular2/core";
-import { NgFor } from "angular2/common";
+import { Component, Input, Output, EventEmitter, ViewChildren, QueryList } from "@angular/core";
 import { ToggleButtonComponent } from "./toggle-button";
 
 @Component({
-    directives: [ NgFor, ToggleButtonComponent ],
     selector: "feel-toggle-button-group",
-    template: `<feel-toggle-button *ngFor="#item of items" [text]="getToggleButtonText(item)" (select)="_onChildSelect($event)" (deselect)="_emitSelectedItemsChange()" [selected]="_itemIsSelected(item)"></feel-toggle-button>`
+    template: `<feel-toggle-button *ngFor="let item of items" [text]="getToggleButtonText(item)" (select)="_onChildSelect($event)" (deselect)="_emitSelectedItemsChange()" [selected]="_itemIsSelected(item)"></feel-toggle-button>`
 })
 export class ToggleButtonGroupComponent {
 

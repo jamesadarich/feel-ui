@@ -1,0 +1,174 @@
+@charset "UTF-8";
+button {
+  border: none;
+  padding: 16px;
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 4px;
+  background-color: transparent;
+  box-shadow: none;
+  border: 1px solid #ccc;
+  color: red; }
+  button.btn-raised {
+    background-color: white;
+    transition: box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 5px 8px 0 rgba(0, 0, 0, 0.14), 0 1px 14px 0 rgba(0, 0, 0, 0.12);
+    color: red; }
+    button.btn-raised:hover {
+      box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.12); }
+    button.btn-raised:active {
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12); }
+  button.btn-primary {
+    background-color: red;
+    color: white; }
+  button:hover {
+    background-color: #eee;
+    box-shadow: inset 0 0 2px #bbb; }
+  button:active {
+    background-color: #ddd;
+    box-shadow: inset 0 0 4px #bbb; }
+
+feel-input label {
+  display: block;
+  padding: 4px 6px; }
+
+feel-input textarea {
+  resize: none; }
+
+feel-input input, feel-input textarea {
+  width: 100%;
+  border: 0;
+  background-color: #eee;
+  border-bottom: 2px solid #ccc;
+  padding: 4px 6px;
+  font-size: 18px;
+  outline: none;
+  box-sizing: border-box; }
+  feel-input input:focus, feel-input input :active, feel-input textarea:focus, feel-input textarea :active {
+    border-bottom-color: red; }
+
+feel-menu-bar {
+  background-color: red;
+  color: white;
+  display: block;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  padding: 8px;
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 5px 8px 0 rgba(0, 0, 0, 0.14), 0 1px 14px 0 rgba(0, 0, 0, 0.12); }
+  feel-menu-bar .title {
+    display: inline-block;
+    vertical-align: middle; }
+    feel-menu-bar .title h1 {
+      display: inline; }
+
+.menu-title {
+  background-color: red; }
+  .menu-title h1 {
+    display: inline; }
+
+feel-menu-panel {
+  background-color: red; }
+  feel-menu-panel > div {
+    height: 100%;
+    transition: left 0.4s ease;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 5px 8px 0 rgba(0, 0, 0, 0.14), 0 1px 14px 0 rgba(0, 0, 0, 0.12); }
+    feel-menu-panel > div.show {
+      left: 0; }
+  feel-menu-panel .menu-title {
+    padding: 8px;
+    display: inline-block;
+    vertical-align: middle; }
+  feel-menu-panel .menu-item {
+    background-color: white;
+    color: black;
+    border: 1px solid #eee; }
+
+#notification-stream {
+  position: fixed;
+  top: 100px;
+  right: 50%; }
+  #notification-stream .notification {
+    padding: 8px;
+    margin: 8px;
+    display: block;
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 5px 8px 0 rgba(0, 0, 0, 0.14), 0 1px 14px 0 rgba(0, 0, 0, 0.12);
+    background-color: #fff;
+    border: 2px solid #000;
+    border-left-width: 48px; }
+    #notification-stream .notification.success {
+      border-color: #23a112; }
+    #notification-stream .notification.error {
+      border-color: #a11212; }
+    #notification-stream .notification .title {
+      font-size: 24px; }
+    #notification-stream .notification .message {
+      color: #666; }
+
+feel-table table {
+  border-collapse: collapse; }
+  feel-table table thead {
+    background-color: red;
+    color: white; }
+    feel-table table thead th {
+      padding: 4px 6px; }
+      feel-table table thead th .sort-icon.ascending::after {
+        content: "▲"; }
+      feel-table table thead th .sort-icon.descending::after {
+        content: "▼"; }
+  feel-table table tbody tr:nth-child(even) {
+    background-color: #eee; }
+  feel-table table tbody tr td {
+    padding: 4px 6px; }
+
+.slider-track {
+  background-color: gray;
+  height: 2px;
+  position: relative; }
+  .slider-track .slider-button {
+    background-color: red;
+    height: 16px;
+    width: 16px;
+    position: absolute;
+    border-radius: 50%;
+    top: -6px;
+    margin-left: -8px; }
+
+feel-checkbox {
+  cursor: pointer;
+  display: block; }
+  feel-checkbox svg {
+    width: 20px;
+    height: 20px;
+    overflow: visible;
+    padding: 2px; }
+    feel-checkbox svg.checked path {
+      stroke-dashoffset: 0; }
+  feel-checkbox path, feel-checkbox rect {
+    fill: none; }
+  feel-checkbox path {
+    stroke-width: 4px;
+    stroke: red;
+    stroke-dashoffset: 26px;
+    stroke-dasharray: 26px;
+    transition: stroke-dashoffset 0.4s ease; }
+  feel-checkbox rect {
+    stroke-width: 2px;
+    stroke: #666; }
+  feel-checkbox:focus {
+    outline: none; }
+    feel-checkbox:focus rect {
+      stroke: red; }
+  feel-checkbox[disabled] rect, feel-checkbox[disabled] path {
+    stroke: #ccc; }
+  feel-checkbox[disabled] label {
+    color: #ccc; }
+  feel-checkbox label {
+    vertical-align: top;
+    cursor: pointer; }

@@ -1,8 +1,6 @@
-import { Component, Input, HostListener, HostBinding, EventEmitter, Output } from "angular2/core";
-import { NgClass } from "angular2/common";
+import { Component, Input, HostListener, HostBinding, EventEmitter, Output } from "@angular/core";
 
 @Component({
-    directives: [NgClass],
     selector: "feel-checkbox",
     template: `<svg [ngClass]="{ 'checked': checked }" width="20px" height="20px">
                   <rect x="1" y="1" width="16px" height="16px"></rect>
