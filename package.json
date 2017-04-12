@@ -2,8 +2,11 @@
   "name": "feel-ui",
   "version": "0.3.0",
   "description": "",
-  "main": "dist/feel-ui.js",
+  "main": "dist/commonjs/feel-ui.js",
   "scripts": {
+    "build-commonjs": "tsc -p ./src",
+    "prepublish": "build-commonjs",
+
     "bundle": "npm run bundle-typescript && npm run bundle-sass",
     "bundle-typescript": "npm run bundle-typescript-amd && npm run bundle-typescript-system && npm run bundle-typescript-amd-dev && npm run bundle-typescript-system-dev",
     "bundle-typescript-amd": "tsc --module amd --outFile ./dist/feel-ui.amd.js",

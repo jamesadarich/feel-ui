@@ -7,7 +7,12 @@
         "sourceMap": false,
         "preserveConstEnums": true,
         "experimentalDecorators": true,
-        "moduleResolution": "node"
+        "moduleResolution": "node",
+        "outDir": "../dist/commonjs",
+        "lib": [
+            "es6",
+            "dom"
+        ]
     },
     "buildOnSave": false,
     "compileOnSave": true,
@@ -16,6 +21,6 @@
         "../**/*.d.ts"
     ],
     "include": [
-        "./feel-ui.module.ts"
+        "./**/*.ts"
     ]
 }
